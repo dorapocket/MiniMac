@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<head>
+    <meta charset='UTF-8'>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>
+        MiniMac 操作结果
+    </title>
+    <style>
+        * {
+            margin:0;
+            padding:0;
+            outline:0;
+        }
+        .container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    color: #ededed;
+}
+.weui-msg {
+    padding-top: 48px;
+    padding: calc(48px + constant(safe-area-inset-top)) constant(safe-area-inset-right) constant(safe-area-inset-bottom) constant(safe-area-inset-left);
+    padding: calc(48px + env(safe-area-inset-top)) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+    text-align: center;
+    line-height: 1.4;
+    min-height: 100%;
+    box-sizing: border-box;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    background-color: #fff;
+}
+.weui-msg__icon-area {
+    margin-bottom: 32px;
+}
+.weui-icon_msg.weui-icon_msg {
+    width: 6.4em;
+    height: 6.4em;
+}
+[class^="weui-icon-"][class^="weui-icon-"], [class^="weui-icon-"][class*=" weui-icon-"], [class*=" weui-icon-"][class^="weui-icon-"], [class*=" weui-icon-"][class*=" weui-icon-"] {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 10px;
+    -webkit-mask-position: 50% 50%;
+    mask-position: 50% 50%;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100%;
+    mask-size: 100%;
+    background-color: currentColor;
+}
+.weui-icon-success {
+    color: #07c160;
+}
+.weui-icon-success {
+    -webkit-mask-image: url(data:image/svg+xml,%3Csvg%20width%3D%2224%22%20height%3D%2224%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M12%2022C6.477%2022%202%2017.523%202%2012S6.477%202%2012%202s10%204.477%2010%2010-4.477%2010-10%2010zm-1.177-7.86l-2.765-2.767L7%2012.431l3.119%203.121a1%201%200%20001.414%200l5.952-5.95-1.062-1.062-5.6%205.6z%22%2F%3E%3C%2Fsvg%3E);
+    mask-image: url(data:image/svg+xml,%3Csvg%20width%3D%2224%22%20height%3D%2224%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M12%2022C6.477%2022%202%2017.523%202%2012S6.477%202%2012%202s10%204.477%2010%2010-4.477%2010-10%2010zm-1.177-7.86l-2.765-2.767L7%2012.431l3.119%203.121a1%201%200%20001.414%200l5.952-5.95-1.062-1.062-5.6%205.6z%22%2F%3E%3C%2Fsvg%3E);
+}
+.weui-msg__text-area {
+    margin-bottom: 32px;
+    padding: 0 32px;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    flex: 1;
+    line-height: 1.6;
+    word-wrap: break-word;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+}
+.weui-msg__title {
+    margin-bottom: 16px;
+    font-weight: 500;
+    font-size: 22px;
+    color: rgba(0,0,0,0.9);
+}
+.weui-msg__desc {
+    font-size: 17px;
+    font-weight: 400;
+    color: rgba(0,0,0,0.9);
+    margin-bottom: 16px;
+}
+.weui-msg__opr-area {
+    margin-bottom: 16px;
+}
+.weui-btn_primary {
+    background-color: #07c160;
+}
+.weui-btn {
+    position: relative;
+    display: block;
+    width: 184px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 8px 24px;
+    box-sizing: border-box;
+    font-weight: 700;
+    font-size: 17px;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    line-height: 1.88235294;
+    border-radius: 8px;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+a {
+    text-decoration: none;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+.weui-msg__opr-area+.weui-msg__tips-area {
+    margin-bottom: 48px;
+}
+.weui-msg__tips-area {
+    margin-bottom: 16px;
+    padding: 0 40px;
+    word-wrap: break-word;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+}
+.weui-msg__tips {
+    font-size: 12px;
+    color: rgba(0,0,0,0.5);
+}
+.weui-msg__extra-area {
+    margin-bottom: 24px;
+    padding: 0 32px;
+    box-sizing: border-box;
+    font-size: 12px;
+    color: rgba(0,0,0,0.5);
+}
+.weui-footer {
+    color: rgba(0,0,0,0.3);
+    font-size: 14px;
+    line-height: 1.4;
+    text-align: center;
+}
+.weui-footer__text {
+    padding: 0 16px;
+    font-size: 12px;
+}
+.weui-icon_msg.weui-icon_msg.weui-icon-warn {
+    color: #fa5151;
+    color: var(--weui-RED);
+}
+.weui-icon-warn {
+    color: #fa5151;
+    color: var(--weui-RED);
+}
+.weui-icon-warn {
+    -webkit-mask-image: url(data:image/svg+xml,%3Csvg%20width%3D%2224%22%20height%3D%2224%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M12%2022C6.477%2022%202%2017.523%202%2012S6.477%202%2012%202s10%204.477%2010%2010-4.477%2010-10%2010zm-.763-15.864l.11%207.596h1.305l.11-7.596h-1.525zm.759%2010.967c.512%200%20.902-.383.902-.882%200-.5-.39-.882-.902-.882a.878.878%200%2000-.896.882c0%20.499.396.882.896.882z%22%2F%3E%3C%2Fsvg%3E);
+    mask-image: url(data:image/svg+xml,%3Csvg%20width%3D%2224%22%20height%3D%2224%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M12%2022C6.477%2022%202%2017.523%202%2012S6.477%202%2012%202s10%204.477%2010%2010-4.477%2010-10%2010zm-.763-15.864l.11%207.596h1.305l.11-7.596h-1.525zm.759%2010.967c.512%200%20.902-.383.902-.882%200-.5-.39-.882-.902-.882a.878.878%200%2000-.896.882c0%20.499.396.882.896.882z%22%2F%3E%3C%2Fsvg%3E);
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="weui-msg">
+            <div class="weui-msg__icon-area">
+                <i class="weui-icon-success weui-icon_msg"></i>
+            </div>
+            <div class="weui-msg__text-area">
+                <h2 class="weui-msg__title">提交成功</h2>
+                <p class="weui-msg__desc">MiniMac已收到连接信息，正在重启，可以使用啦~</p>
+            </div>
+            <div class="weui-msg__opr-area">
+                <p class="weui-btn-area">
+                    <a onclick="" role="button" class="weui-btn weui-btn_primary">关闭此页</a>
+
+                </p>
+            </div>
+            <div class="weui-msg__tips-area">
+                <p class="weui-msg__tips">
+                    ≥ω≤
+                </p>
+            </div>
+            <div class="weui-msg__extra-area">
+                <div class="weui-footer">
+                    <p class="weui-footer__text">
+                        Copyright 2022 Dorapocket<br>pyp's birthday present
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function goback(){
+            location.href="/";
+        }
+        function close(){
+            window.close();
+        }
+    </script>
+</body>

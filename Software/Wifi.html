@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang='en'>
+	<head>
+		<meta charset='UTF-8'>
+		
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+		<title>ESP32桌面小电视</title>
+		<style type="text/css">
+			* { margin: 0; padding: 0; }
+			 html { height: 100%; }
+			 h2 {text-align: center;color: #fff;line-height: 2.2;}
+			 body { height: 100%; background-color: #1F6F4A; 50% 50% no-repeat; background-size: cover;}
+			 .dowebok { position: absolute; left: 50%; top: 30%; width: 380px; height: 500px; margin: -200px 0 0 -200px; border: 3px solid #fff; border-radius: 10px; overflow: hidden;}
+			 
+			 .form-item { position: relative; width: 360px; margin: 0 auto; padding-bottom: 20px;}
+			 .form-item input { width: 288px; height: 48px; padding-left: 10px; border: 1px solid #fff; border-radius: 25px; font-size: 18px; color: #fff; background-color: transparent; outline: none;}
+			 .send_button { width: 360px; height: 50px; border: 0; border-radius: 25px; font-size: 18px; color: #1f6f4a; outline: none; cursor: pointer; background-color: #fff; }
+			 
+			 .tip { display: none; position: absolute; left: 20px; top: 52px; font-size: 14px; color: #f50; }
+			 .reg-bar { width: 360px; margin: 20px auto 0; font-size: 14px; overflow: hidden;}
+			 .reg-bar a { color: #fff; text-decoration: none; }
+			 .reg-bar a:hover { text-decoration: underline; }
+			 .reg-bar .reg { float: left; }
+			 .reg-bar .forget { float: right; }
+			 .dowebok ::-webkit-input-placeholder { font-size: 18px; line-height: 1.4; color: #fff;}
+			 .dowebok :-moz-placeholder { font-size: 18px; line-height: 1.4; color: #fff;}
+			 .dowebok ::-moz-placeholder { font-size: 18px; line-height: 1.4; color: #fff;}
+			 .dowebok :-ms-input-placeholder { font-size: 18px; line-height: 1.4; color: #fff;}
+			  
+			 @media screen and (max-width: 500px) {
+			 * { box-sizing: border-box; }
+			 .dowebok { position: static; width: auto; height: auto; margin: 0 30px; border: 0; border-radius: 0; }
+			 .logo { margin: 50px auto; }
+			 .form-item { width: auto; }
+			 .form-item input, .form-item button, .reg-bar { width: 100%; }
+			 }
+			 
+		</style>
+	</head>
+	
+	<body>
+		<div class="dowebok">
+			<h2>参 数 配 置</h2>
+			<form style='text-align: center;padding-top: 20px' name='input' action='/' method='POST'>	 
+				 <div class="form-item">
+					<input id="username" type="text" name='ssid' autocomplete="off" placeholder="WiFi名称">
+				 </div>
+				 <div class="form-item">
+					<input id="password" type="password" name='password' autocomplete="off" placeholder="WiFi密码">
+				 </div>
+				 <div class="form-item">
+				 	<input id="citycode" type="citycode" name='citycode' autocomplete="off" placeholder="城市代码,留空则自动定位获取">
+				 </div>
+				 <div class="form-item">
+				 <input type="radio" name="sex" value="normal" checked>正常模式
+				 <br>
+				 <input type="radio" name="sex" value="gkd">国科大模式
+				 </div>
+				 <div class="form-item">
+					<input id="username-gkd" type="text" name='username-gkd' autocomplete="off" placeholder="国科大WiFi用户名">
+				 </div>
+				 <div class="form-item">
+					<input id="password-gkd" type="password" name='password-gkd' autocomplete="off" placeholder="国科大WiFi密码">
+				 </div>
+
+
+				 <div class="form-item">
+					 <div id="">
+						<input id="send_button" type='submit' value='保存并连接'>
+					 </div>
+				</div>
+				<div class="form-item">
+					<div class="user_text">
+						<br>
+						<p><h3>备注：</h3></p>
+						<p>
+							<h5>
+								国科大模式：因为国科大网络采用强认证机制，需要二次登录，选择该模式以进行自动登录。
+							</h5>
+						</p>
+					</div>
+			   </div>
+				
+			</form>	
+		 </div>
+	</body>
+</html>
